@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load form_tags %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-xl shadow-md border border-gray-200 bg-gradient-to-br from-blue-50 to-white">
+  <h1 class="text-3xl font-bold text-blue-800 mb-6 text-center">📘 About MySite</h1>
+
+  <p class="mb-8 text-lg leading-relaxed text-gray-700 text-center">
+    <strong>MySite</strong> is a minimalist and modern blogging platform built with Django and Tailwind CSS.
+    It offers a clean writing experience, secure user access, and a beautiful responsive design.
+  </p>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="bg-blue-100 p-5 rounded-lg shadow-sm">
+      <h3 class="text-xl font-semibold text-blue-800 mb-2">🔐 Secure Login</h3>
+      <p class="text-gray-600 text-sm">Built on Django’s robust authentication system, ensuring safe and reliable access for all users.</p>
+    </div>
+
+    <div class="bg-blue-100 p-5 rounded-lg shadow-sm">
+      <h3 class="text-xl font-semibold text-blue-800 mb-2">📝 Write Blogs Easily</h3>
+      <p class="text-gray-600 text-sm">Create, edit, and manage blogs using a clean and intuitive user interface.</p>
+    </div>
+
+    <div class="bg-blue-100 p-5 rounded-lg shadow-sm">
+      <h3 class="text-xl font-semibold text-blue-800 mb-2">📱 Fully Responsive</h3>
+      <p class="text-gray-600 text-sm">Looks and works great across all devices — phones, tablets, and desktops.</p>
+    </div>
+
+    <div class="bg-blue-100 p-5 rounded-lg shadow-sm">
+      <h3 class="text-xl font-semibold text-blue-800 mb-2">🚀 Future Ready</h3>
+      <p class="text-gray-600 text-sm">Prepared for upcoming features like image uploads, categories, markdown editing, and even AI assistance.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

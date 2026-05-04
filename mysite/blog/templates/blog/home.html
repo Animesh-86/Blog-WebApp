@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="max-w-3xl mx-auto mt-10">
+  <h2 class="text-2xl font-semibold text-blue-800 mb-6">
+    Welcome, {{ request.user.get_full_name }} 👋
+  </h2>
+
+  <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-xl shadow-md border border-gray-200">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-semibold text-gray-800">📚 Saved Blogs</h3>
+      <a href="{% url 'add_dataset' %}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm font-medium rounded shadow transition">
+        ➕ New Blog
+      </a>
+    </div>
+
+    {% if datasets %}
+      <ul class="divide-y divide-gray-200">
+        {% for dataset in datasets %}
+        <li class="py-3">
+          <a href="{% url 'view_blog' dataset.id %}" class="block">
+            <div class="font-semibold text-blue-700 hover:underline">{{ dataset.name }}</div>
+            <p class="text-gray-600 text-sm line-clamp-2">{{ dataset.description|truncatewords:25 }}</p>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-gray-500 italic">No blogs added yet.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
